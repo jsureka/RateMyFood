@@ -11,19 +11,19 @@
         <form class="margin-t">
             <div class="form-group mb-3">
               <label class="text-darkyellow">FULL NAME</label>
-              <input type="text" name="name" class="form-control" placeholder="Full Name" required="">
+              <input type="text" name="name" class="form-control" placeholder="Full Name" required [(ngModel)]="user.name" [ngModelOptions]="{standalone:true}">
             </div>
             <div class="form-group mb-3">
               <label class="text-darkyellow">EMAIL ADDRESS</label>
-              <input type="email" name="email" class="form-control" placeholder="Email Address" required="" [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}">
+              <input type="email" name="email" class="form-control" placeholder="Email Address" required [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}">
             </div>
             <div class="form-group mb-3">
               <label class="text-darkyellow">PHONE NO</label>
-              <input type="text" name="phone" class="form-control" placeholder="Phone No" required="">
+              <input type="text" name="phone" class="form-control" placeholder="Phone No" required pattern="01(3|4|5|6|7|8|9)[0-9]{8}"  [(ngModel)]="user.phone" [ngModelOptions]="{standalone:true}">
             </div>
             <div class="form-group mb-3">
               <label class="text-darkyellow">ADDRESS</label>
-              <input type="text" name="address" class="form-control" placeholder="Address" required="">
+              <input type="text" name="address" class="form-control" placeholder="Address" required [(ngModel)]="user.address" [ngModelOptions]="{standalone:true}">
             </div>
             <div class="form-group mb-4">
               <label class="text-darkyellow left">PASSWORD</label>
@@ -31,11 +31,11 @@
             </div>
             <div class="form-group mb-4">
               <label class="text-darkyellow left">RE-WRITE PASSWORD</label>
-              <input type="password" name="password" class="form-control" placeholder="***********" required="">
+              <input type="password" name="password" class="form-control" placeholder="***********" required="" [(ngModel)]="confirm_password" [ngModelOptions]="{standalone:true}">
             </div>
 
             <hr class="text-whitesmoke">
-            <button type="submit" class="btn btn-outline-warning">Sign Up</button>
+            <button (click)="addUser()" type="submit" class="btn btn-outline-warning">Sign Up</button>
             <br>
             <br>
             <p class="text-whitesmoke text-center"><small>Already have an account? </small>

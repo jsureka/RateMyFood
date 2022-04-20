@@ -12,7 +12,7 @@ export class SignupComponent implements OnInit {
 
 
   user = new User();
-
+  confirm_password:string = "";
   constructor(private userService:UserService,private route:Router) { }
 
   ngOnInit(): void {
@@ -28,10 +28,19 @@ export class SignupComponent implements OnInit {
     //   username:this.username,
     //   password:this.password
     // }
-    this.userService.addUser(this.user).subscribe(response=>{
-      alert(response)
-      this.route.navigate(['signin'])
-    });
+    if(this.user.password == this.confirm_password)
+    {
+      this.userService.addUser(this.user).subscribe(response=>{
+        alert(response)
+        this.route.navigate(['signin'])
+      });
+    }
+    else
+    {
+      alert('please enter same password');
+      console.log('please enter same password');
+    }
+    
   }
 
 }

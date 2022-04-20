@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema({
     minLength: [8, "Password should be greater than 8 characters"],
     select: false,
   },
+  
   phone: {
     type: String,
     required: [true, "Please Enter Your Phone Number"],
@@ -28,6 +29,18 @@ const userSchema = new mongoose.Schema({
     maxlength: [11],
     unique: true,
   },
+  address:{
+    type:String,
+    required:[true,"Please enter your address"],
+    minlength:[8],
+    maxlength:[50]
+
+  },
+  createdAt:{
+    type:Date,
+    default:Date.now
+  }
+  
   
 });
 

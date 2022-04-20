@@ -16,7 +16,7 @@ export class UserService {
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
  
   addUser(val: any) {
-    return this.http.post(this.apiBaseUrl + '/register/', val);
+    return this.http.post(this.apiBaseUrl + '/api/v1/register', val);
   }
  
   login(authCredentials: any){

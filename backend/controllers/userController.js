@@ -4,13 +4,14 @@ const User = require("../models/userModel");
 
 // Register a User
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
-  const { name, email, password, phone } = req.body;
+  const { name, email, password, phone,address } = req.body;
   console.log(name);
   const user = await User.create({
     name,
     email,
     password,
-    phone
+    phone,
+    address
   });
 
   res.status(201).json({
