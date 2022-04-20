@@ -23,6 +23,17 @@ const postSchema = new mongoose.Schema({
     required:[true],
     maxlength:[10]
   },
+  restaurantName:{
+    type: String,
+    required:[true],
+  },
+  location:{
+    type:String,
+    required:[true,"Please enter the restaurant location"],
+    minlength:[8],
+    maxlength:[50]
+
+  },
   createdAt: {
     type: Date,
     default: Date.now,
