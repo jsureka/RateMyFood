@@ -184,6 +184,7 @@ body {
 .main-bg {
   /*background: rgb(110, 110, 110);
   background: linear-gradient( white, gainsboro);*/
+  background: aliceblue;
   min-height:100vh;
 }
 

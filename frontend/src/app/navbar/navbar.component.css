@@ -1,0 +1,18 @@
+.container {
+  background: aliceblue;
+  min-height: 100vh;
+}
+
+/* Text Color */
+.text-whitesmoke {
+  color: whitesmoke;
+}
+.text-black {
+  color: black;
+}
+.text-darkyellow {
+  color: #FFC017;
+}
+.text-green {
+  color: green;
+}
