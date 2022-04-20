@@ -22,16 +22,13 @@ const userSchema = new mongoose.Schema({
     select: false,
   },
   phone: {
-    type: Number,
+    type: String,
     required: [true, "Please Enter Your Phone Number"],
     minlength: [9],
     maxlength: [11],
     unique: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  }
+  
 });
 
 userSchema.pre("save", async function (next) {
