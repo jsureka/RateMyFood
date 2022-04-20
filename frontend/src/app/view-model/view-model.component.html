@@ -1,23 +1,25 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2">
+    <div class="col-md-2">
       <app-navbar></app-navbar>
     </div>
-    <div class="col-7">
+    <div class="col-md-7 ">
       <br>
       <div class="getMiddle">
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <div class="btn-group p-3" role="group" aria-label="Basic radio toggle button group">
           <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-          <label class="btn btn-outline-dark" for="btnradio1">Go to NewFeed</label>
+          <label class="btn newsfeed-btn btn-outline-dark" for="btnradio1">Go to NewFeed</label>
           <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-          <label class="btn btn-outline-dark" for="btnradio2">Go to TimeLine</label>
+          <label class="btn newsfeed-btn btn-outline-dark" for="btnradio2">Go to TimeLine</label>
         </div>
       </div>
 
+     <div class=" mainSection">
       <app-newsfeed></app-newsfeed>
       <app-timeline></app-timeline>
+     </div>
     </div>
-    <div class="col-3">
+    <div class="col-md-3 login-signup">
       <app-login></app-login>
       <app-signup></app-signup>
       <router-outlet></router-outlet>

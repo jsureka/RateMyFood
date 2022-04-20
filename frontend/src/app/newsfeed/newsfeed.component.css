@@ -1,4 +1,20 @@
 .card {
-  border: 2px solid;
-  background-color: aliceblue;
+ border-radius: 25px;
+ padding: 35px;
+
+}
+h4{
+  color: #F58634
+}
+p{
+  color: #7882A4;
+}
+.img-fluid{
+  border-radius: 15px;
+}
+.fs-5{
+  font-size: 15px !important;
+}
+.rating{
+  color: #F58634 !important;
 }

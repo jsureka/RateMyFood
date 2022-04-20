@@ -1,0 +1,17 @@
+.mainSection{
+    background-color: #CEE5D0;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 10px;
+}
+.btn-check:active+.btn-outline-dark, .btn-check:checked+.btn-outline-dark, .btn-outline-dark.active, .btn-outline-dark.dropdown-toggle.show, .btn-outline-dark:active {
+    background-color: #FF7878;
+    border: 0;
+}
+.btn-outline-dark{
+    border: gray !important;
+}
+.btn-outline-dark:hover{
+    background-color: lightgray;
+
+}
