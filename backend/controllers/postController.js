@@ -3,7 +3,7 @@ const Post = require("../models/postModel");
 
 // Register a User
 exports.addPost = catchAsyncErrors(async (req, res, next) => {
-  const { user_id,title,description,foodName,rating,restaurantName,location } = req.body;
+  const { user_id,title,description,foodName,rating,restaurantName,location,isHidden } = req.body;
   console.log(title);
   const post = await Post.create({
     user_id,
@@ -12,7 +12,8 @@ exports.addPost = catchAsyncErrors(async (req, res, next) => {
     foodName,
     rating,
     location,
-    restaurantName
+    restaurantName,
+    isHidden
   });
 
   res.status(201).json({

@@ -9,7 +9,10 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class PostService {
 
+  res:any;
   post = new Post();
+
+  user_id:any;
 
   apiBaseUrl = "http://localhost:5000/api/v1/";
 
@@ -18,6 +21,17 @@ export class PostService {
   post_blog(val:any)
   {
     return this.http.post(this.apiBaseUrl+'add-post',val);
+  }
+
+  getAllPost()
+  {
+    return this.http.get(this.apiBaseUrl+'get-post');
+   
+  }
+
+  getUserPost()
+  {
+    return this.http.get(this.apiBaseUrl+'get-user-post' + this.user_id);
   }
 
 }
