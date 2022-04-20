@@ -12,17 +12,24 @@ export class UserService {
   selectedUser: User = new User();
   loginStatus: boolean = false;
   constructor(private http: HttpClient) { }
-  apiBaseUrl = "http://localhost:5000";
+  apiBaseUrl = "http://localhost:5000/api/v1/";
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
  
   addUser(val: any) {
-    return this.http.post(this.apiBaseUrl + '/api/v1/register', val);
+    return this.http.post(this.apiBaseUrl + 'register', val);
+  }
+  // login(val:any){
+  //   return this.http.post(this.apiBaseUrl +  'login', val, {
+  //       withCredentials: true
+  //   });
+  // }
+ 
+   login(val: any){
+     return this.http.post(this.apiBaseUrl + 'login', val);
   }
  
-  login(authCredentials: any){
-    return this.http.post(this.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader);
-  }
- 
+
+  
   getUserProfile(){
     return this.http.get(this.apiBaseUrl + '/userProfile');
   }
@@ -58,5 +65,12 @@ export class UserService {
       }
       else
         return false;
+    }
+    setUser(user:User)
+    {
+      this.selectedUser = user;
+    }
+    getUser():User{
+      return this.selectedUser;
     }
 }

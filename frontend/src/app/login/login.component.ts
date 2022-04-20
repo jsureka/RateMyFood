@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,12 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router, private userServce: UserService, private http: HttpClient) { }
+  constructor(private router: Router, private userService: UserService, private http: HttpClient) { }
  
-  model ={
+  res : any;
+
+  user : any;
+  model:any ={
     email: '',
     password: ''
  
@@ -25,23 +29,39 @@ export class LoginComponent implements OnInit {
   noAccount(){
     this.router.navigate(['signup']);
   }
+
+   login(){
+     console.log("logging in....")
+     
+
+
+     this.userService.login(this.model).subscribe((response:any)=>{
+       this.res = response['success'];
+       if(this.res)
+       {
+        this.user = response['user'];
+        this.userService.setUser(this.user);
+        console.log(response)
+        alert("Welcome:"+this.user.name);
+        console.log(JSON.stringify(response));
+        this.userService.loginStatus = true;
+        this.router.navigate(['login'])
+       }
+       else
+       {
+         alert("Invalid password or email");
+       }
+       
+     },
+     err => {
+      alert("Invalid password or email");
+      this.serverErrorMessages = err.error.message;
+
+    });
+  
+   }
  
-  signIn(){
-    this.userServce.login(this.model).subscribe(
-      (res:any) => {
-        if(res['token']){
-          localStorage.setItem('token', res['token']);
-          this.userServce.loginStatus = true;
-          this.router.navigateByUrl('profile');
-        }
-        console.log(res);
-        //this.userServce.setToken(res['token']);
-        //localStorage.setItem('token', res.token);
-      },
-      err => {
-        this.serverErrorMessages = err.error.message;
- 
-      }
-    )};
+  
+    
 
 }
