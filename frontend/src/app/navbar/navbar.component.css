@@ -1,5 +1,4 @@
 .container {
-  background: aliceblue;
   min-height: 100vh;
 }
 
@@ -15,4 +14,27 @@
 }
 .text-green {
   color: green;
+  padding: 7px;
+}
+
+a{
+  text-decoration: none !important;
+  font-weight: 500;
+  font-size: large;
+  color: gray;
+
+
+}
+li{
+  margin-bottom: 5px;
+
+}
+li:hover{
+  border-radius: 5px;
+  background: #F3F0D7;
+  color: #FF7878;
+  transition: ease-in-out 200ms;
+}
+li:hover a{
+    color: #FF7878;
 }

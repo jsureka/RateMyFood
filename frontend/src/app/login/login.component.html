@@ -1,25 +1,22 @@
 
-<div class=" main-bg">
-  <br><br>
-  <div class="login-container text-c animated flipInX">
+<div class=" main-bg ">
+  <br><br><br><br>
+  <div class="login-container text-c animated flipInX p-4">
     <div>
-        <h1 class="logo-badge text-black"><span class="fa fa-user-circle"></span></h1>
+        <h1 class="logo-badge text-black text-center fs-1"><span class="fa fa-user-circle"></span></h1>
     </div>
-    <br>
-    <div class="container-content">
-        <!-- <h2 class="text-whitesmoke mb-3">Rate My Food</h2> -->
-        <hr class="text-whitesmoke">
+    <div class="container-content ">
         <form class="margin-t">
-            <div class="form-group mb-3">
-              <label class="text-darkyellow">EMAIL ADDRESS</label>
+            <div class="form-group mb-3 mt-4">
+              <label class="text-darkyellow">Email Address</label>
               <input type="email" name="email" class="form-control" placeholder="Email Address" required [(ngModel)]="model.email" [ngModelOptions]="{standalone:true}">
             </div>
             <div class="form-group mb-4">
-              <label class="text-darkyellow left">PASSWORD</label>
+              <label class=" mt-3">Password</label>
               <input type="password" name="password" class="form-control" placeholder="***********" required [(ngModel)]="model.password" [ngModelOptions]="{standalone:true}" >
             </div>
             <hr class="text-whitesmoke">
-            <button (click)="login()" type="submit" class="btn btn-outline-warning">Log In</button>
+            <button (click)="login()" type="submit" class="btn">Log In</button>
             <br>
             <br>
             <a class="text-darkyellow"><small>Forgot password?</small></a>
