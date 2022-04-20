@@ -1,47 +1,57 @@
-
-<div class=" main-bg">
-  <br><br><br><br>
-  <div class="login-container text-c animated flipInX">
+<div class="main-bg">
+  <br /><br /><br /><br />
+  <div class="login-container text-c animated flipInX p-4">
     <div>
-        <h1 class="logo-badge text-black"><span class="fa fa-user-circle"></span></h1>
+      <h1 class="logo-badge text-black text-center">
+        <span class="fa fa-user-circle"></span>
+      </h1>
     </div>
-    <br>
+    <br />
     <div class="container-content">
-        <hr class="text-whitesmoke">
-        <span class="text-darkyellow"> <b> Name:</b></span>
-        <span class="text-whitesmoke"> {{user.name}}</span>
-        <br>
-        <span class="text-darkyellow"> <b> Email:</b></span>
-        <span class="text-whitesmoke"> {{user.email}}</span>
-        <br>
-        <span class="text-darkyellow"> <b> Phone No:</b></span>
-        <span class="text-whitesmoke"> {{user.phone}}</span>
-        <br>
-        <span class="text-darkyellow"> <b> Address:</b></span>
-        <span class="text-whitesmoke"> {{user.address}}</span>
-        <br>
-        <hr class="text-whitesmoke">
+      <hr class="text-whitesmoke" />
+      <span class="text-darkyellow"> <b> Name:</b></span>
+      <span class="text-whitesmoke"> {{ user.name }}</span>
+      <br />
+      <span class="text-darkyellow"> <b> Email:</b></span>
+      <span class="text-whitesmoke"> {{ user.email }}</span>
+      <br />
+      <span class="text-darkyellow"> <b> Phone No:</b></span>
+      <span class="text-whitesmoke"> {{ user.phone }}</span>
+      <br />
+      <span class="text-darkyellow"> <b> Address:</b></span>
+      <span class="text-whitesmoke"> {{ user.address }}</span>
+      <br />
+      <hr class="text-whitesmoke" />
     </div>
-  </div>
-
-
-<br><br><br>
-<div class="row">
-  <div class="col-5">
-    </div>
-    <div class="col">
-      <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">RateMyFood</button>
-    </div>
-  </div>
+        <div class=" text-center">
+          <button
+          class="btn btn-outline-dark"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          RateMyFood
+        </button>
+        </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content myModal">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <div class="container-content">
@@ -77,11 +87,18 @@
                 <label class="form-check-label text-darkyellow" for="hide">Only me</label>
               </div>
           </form>
-      </div>
+        </div>
       </div>
       <div class="modal-footer">
+<<<<<<< HEAD
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Discard
+        </button>
+        <button type="button" class="btn btn-dark">Rate My Food</button>
+=======
         <button  type="button" class="btn btn-danger" data-bs-dismiss="modal">Discard</button>
         <button (click)="post_blog()" type="button" class="btn btn-dark">Rate My Food</button>
+>>>>>>> c766ca6c76be4612298acd777ae087327cbff3a4
       </div>
     </div>
   </div>
