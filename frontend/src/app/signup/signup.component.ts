@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
     }
     else
     {
-      alert('please enter same password');
+      alert('Your password not matched');
       console.log('please enter same password');
     }
     

@@ -42,10 +42,11 @@ export class LoginComponent implements OnInit {
         this.user = response['user'];
         this.userService.setUser(this.user);
         console.log(response)
-        alert("Welcome:"+this.user.name);
+        alert("Welcome:"+this.user.name+"\nSuccessfully logged in");
         console.log(JSON.stringify(response));
         this.userService.loginStatus = true;
-        this.router.navigate(['login'])
+        
+        this.router.navigate(['profile']);
        }
        else
        {
