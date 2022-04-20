@@ -9,7 +9,7 @@ import { User } from './user';
 })
 export class UserService {
 
-  selectedUser: User = new User();
+  selectedUser!: any; 
   loginStatus: boolean = false;
   constructor(private http: HttpClient) { }
   apiBaseUrl = "http://localhost:5000/api/v1/";
@@ -66,11 +66,16 @@ export class UserService {
       else
         return false;
     }
-    setUser(user:User)
+    setUser(user:any)
     {
       this.selectedUser = user;
+      console.log(this.selectedUser);
     }
-    getUser():User{
+    getUser():any{
       return this.selectedUser;
+    }
+    post_blog(val:any)
+    {
+      return this.http.post(this.apiBaseUrl+'add-post',val);
     }
 }
