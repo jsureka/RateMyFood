@@ -5,7 +5,6 @@ const User = require("../models/userModel");
 // Register a User
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password, phone,address } = req.body;
-  console.log(name);
   const user = await User.create({
     name,
     email,
@@ -53,5 +52,14 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({
     success: true,
     message: "Logged Out",
+  });
+});
+
+exports.getUser = catchAsyncErrors(async (req, res, next) => {
+  const {user_id} = req.body;
+  const user = await User.findById( user_id );
+  res.status(200).json({
+    success: true,
+    user,
   });
 });
