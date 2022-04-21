@@ -21,7 +21,6 @@ export class NewsfeedComponent implements OnInit {
       console.log(this.posts);
     });
     
-    console.log(this.posts);
   }
 
   

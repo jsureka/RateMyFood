@@ -1,5 +1,5 @@
 export class Post{
-    user_id:string = "";
+    userId:string = "";
     title:string = "";
     description:string = "";
     foodName : string = "";

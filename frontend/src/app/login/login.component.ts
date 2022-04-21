@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
         this.userService.loginStatus = true;
         
         this.router.navigate(['profile']);
+        
        }
        else
        {

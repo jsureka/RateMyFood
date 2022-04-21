@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.userService.getUser();
-    this.post.user_id = this.user._id;
+    this.post.userId = this.user._id;
   }
   
   post_blog()
@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
     },
     err => {
       //alert("Invalid password or email");
-      console.log(this.post.user_id+" "+this.post.foodName);
+      console.log(this.post.userId+" "+this.post.foodName);
       alert(err.error.message);
 
     });
